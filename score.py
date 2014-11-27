@@ -8,9 +8,13 @@ class Score(object):
 
     def __init__(self):
         self.score = 0
+        self.percentage = 0
 
     def get_score(self):
         return int(self.score)
+
+    def get_percentage(self):
+        return float(self.percentage)
 
     def note_collide1(self, note):
         checkbox1 = []
@@ -21,6 +25,7 @@ class Score(object):
                 note.hit1()
                 note.delete1()
                 self.score += 100
+                self.percentage += (100.00/336.00)
             #elif pygame.key.get_pressed()[K_f] and i == 1:
                 #note.hit()
                 #self.score += 100
@@ -34,6 +39,8 @@ class Score(object):
                 note.hit2()
                 note.delete2()
                 self.score += 100
+                self.percentage += (100.00/336.00)
+                #increase_percentage()
 
     def note_collide3(self, note):
         checkbox3 = []
@@ -44,6 +51,8 @@ class Score(object):
                 note.hit3()
                 note.delete3()
                 self.score += 100
+                self.percentage += (100.00/336.00)
+                #increase_percentage()
             
 
     def update1(self, note):
